@@ -4,17 +4,16 @@
 //
 //  SceneKit, UltraWide/Telephoto and some motion alts by Dan Monaghan on 2/11/22.
 
+//
+
 //  Original Code by Andrew Zheng - https://github.com/aheze/AlternativeARKit
 //  Created by Zheng on 4/21/20.
 //  Copyright © 2020 Zheng. All rights reserved.
 //
 
-
-
 import UIKit
 import AVFoundation
 import SceneKit
-import GameController
 import CoreMotion
 
 class ViewController: UIViewController, SCNSceneRendererDelegate {
@@ -92,13 +91,12 @@ class ViewController: UIViewController, SCNSceneRendererDelegate {
         floor.geometry!.firstMaterial?.diffuse.contents = UIColor.systemPink
         floor.geometry?.firstMaterial?.transparency = 0.3
         floor.geometry?.firstMaterial?.isDoubleSided = true
-//        scene.rootNode.addChildNode(floor)
+//        scene.rootNode.addChildNode(floor) // using grid instead
         
         sceneView.scene = scene
         
 //        sceneView.allowsCameraControl = true
-        
-        sceneView.showsStatistics = true
+//        sceneView.showsStatistics = true
         
         sceneView.backgroundColor = UIColor.clear
         
@@ -124,7 +122,6 @@ class ViewController: UIViewController, SCNSceneRendererDelegate {
         
  
         sceneView.isUserInteractionEnabled = true
-//        sceneView.allowsCameraControl = true
         sceneView.delegate = self
         /// This is how often we will get device motion updates
         /// 0.03 is more than often enough and is about the rate that the video frame changes!
@@ -150,7 +147,10 @@ class ViewController: UIViewController, SCNSceneRendererDelegate {
         if isAuthorized() {
             configureCamera()
         }
-        
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func drawFloorGrid() {
