@@ -1,6 +1,5 @@
 # UltraWideARKit
-This is the source code for my first attempt at creating an AR experience on iOS without using ARKit. Heavily inspired and copied from Andrew Zheng's project, see below.
-
+This is the source code for my first attempt at creating an AR experience on iOS without using ARKit - using the built-in Ultra Wide angle camera on iphone 12/13 pro - you should be able to alt for other lenses. Heavily inspired and copied from Andrew Zheng's project, see below.
 
 # AlternativeARKit
 ** Andrew Zheng's [Medium article](https://betterprogramming.pub/a-custom-alternative-to-arkit-c07961a38d2a?source=friends_link&sk=ed0c89157da6520e60179f07cb40f911) on a custom ARKit alternative!**
